@@ -1,7 +1,8 @@
 require 'sinatra'
 require 'twilio-ruby'
 require 'tilt/erubis'
-require_relative 'text_sender'
+require_relative 'twilio_client'
+require_relative 'message_worker'
 
 class Main < Sinatra::Base
   enable :sessions
@@ -24,7 +25,7 @@ class Main < Sinatra::Base
   end
 
   post '/' do
-    TextSender::send_text(params[:content], params[:phone_number])
+    MessageWorker.perform_async(params[:content], params[:phone_number])
 
     session[:content] = params[:content]
     session[:phone_number] = params[:phone_number]

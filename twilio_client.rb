@@ -1,4 +1,4 @@
-class TextSender
+class TwilioClient
   class << self
     FROM_NUMBER = '+16147411418'
     ACCOUNT_SID = 'ACc04f9281d461de6c00b324162400d76b' 
