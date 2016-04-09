@@ -1,10 +1,12 @@
 <h4 class="card-title">Send a Text Message!</h4>
 <form method="post" class="span12">
   <fieldset class="form-group">
-    <textarea name="content" placeholder="Content" class="form-control" rows="4"></textarea>
+    <label for="text_content">Content</label>
+    <textarea name="content" id="text_content" class="form-control" rows="4"></textarea>
   </fieldset>
-  <fieldset>
-    <input type="tel" name="phone_number" placeholder="Phone Number" class="form-control">
-  </fieldset class="form-group">
-  <button type="submit" value="Send!" class="btn btn-primary">Submit</button>
+  <fieldset class="form-group">
+    <label for="text_phone_number">Phone Number</label>
+    <input type="tel" name="phone_number" id="text_phone_number" class="form-control">
+  </fieldset>
+  <button type="submit" value="Send!" class="btn btn-primary form-control">Send</button>
 </form>
